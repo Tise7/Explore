@@ -1,0 +1,332 @@
+<resources>
+    <string name="app_name">Explore</string>
+    <string name= "welcome_text"> Welcome</string>
+
+    <string name="coffee_shops">Cafes</string>
+    <string name="coffee_shops_description">Cozy havens for caffeine lovers, perfect for relaxation and casual conversations.</string>
+
+    <string name="restaurants">Restaurants</string>
+    <string name="restaurants_description">Culinary sanctuaries offering delicious dishes, delightful ambiance, and unforgettable dining experiences.</string>
+
+    <string name="amusement_parks">Parks</string>
+    <string name="amusement_parks_description">Thrilling wonderlands of fun rides, games, and endless excitement for all ages. </string>
+
+    <string name="shopping_malls">Shopping Malls</string>
+    <string name="shopping_malls_description">Bustling hubs of fashion, food, and entertainment, catering to every shopper\'s desire. </string>
+
+    <string name="gyms">Gyms</string>
+    <string name="gym_description"> Dynamic fitness centers fostering strength, health, and community through exercise and wellness. </string>
+
+    <string name="cinema">Cinemas</string>
+    <string name="cinema_description">Magical realms where stories come alive on the big screen, captivating audiences </string>
+
+    <string name="hotels">Hotels</string>
+    <string name="hotels_description">Luxurious retreats offering comfort, exceptional service, and a home away from home </string>
+
+    <string name="museum">Museums</string>
+    <string name="museum_description">Timeless repositories of art, history, and culture, sparking curiosity and inspiration.</string>
+
+
+//Coffee shops
+    <string name="coffee_shops_1">Cafe Central, Vienna, Austria </string>
+    <string name="coffee_shops_1_description">
+        Cafe Central is an iconic coffee house located in the heart of Vienna. Established in 1876, it has been a meeting place for famous intellectuals and artists like Sigmund Freud and Leon Trotsky.
+        \n\nThe grand interior, with its marble columns and vaulted ceilings, transports you back to the 19th century. Enjoy a classic Viennese coffee along with their famous apple strudel while soaking in the historical ambiance.
+    </string>
+
+    <string name="coffee_shops_2">Caffè Florian, Venice, Italy</string>
+    <string name="coffee_shops_2_description">
+        Caffè Florian, located in St. Mark\'s Square, is one of the oldest coffee houses in Europe, dating back to 1720. This Venetian gem offers an elegant setting with its ornate decor and historic charm.
+         \n\nWhether you choose to sit inside or enjoy the live music outside, sipping a cappuccino here feels like stepping into a piece of living history. Don’t miss their hot chocolate, a favorite among visitors.
+    </string>
+
+    <string name="coffee_shops_3">The Coffee Collective, Copenhagen, Denmark </string>
+    <string name="coffee_shops_3_description">
+        The Coffee Collective in Copenhagen is a must-visit for serious coffee lovers. Known for their commitment to quality and sustainability, they source their beans directly from farmers. The minimalist Scandinavian design of the shop creates a relaxed atmosphere.
+        \n\nTheir skilled baristas craft perfect pour-overs and espressos, making each cup a delightful experience. Don\'t forget to try their signature drink, the AeroPress coffee.
+    </string>
+
+    <string name="coffee_shops_4"> Antico Caffè Greco, Rome, Italy</string>
+    <string name="coffee_shops_4_description">
+        Situated on the Via dei Condotti, Antico Caffè Greco is Rome\'s oldest coffee bar, established in 1760. The café has an old-world charm with its red velvet seats and historic paintings adorning the walls.
+        \n\nIt has been frequented by notable figures such as Goethe and Keats. Enjoy a rich espresso or a refreshing iced coffee while indulging in a pastry from their exquisite selection.
+    </string>
+
+    <string name="coffee_shops_5">Cafe de Flore, Paris, France </string>
+    <string name="coffee_shops_5_description">
+        Cafe de Flore, located in the vibrant district of Saint-Germain-des-Prés, is a Parisian institution. Since the 1880s, it has been a favorite haunt for writers, philosophers, and artists, including Jean-Paul Sartre and Simone de Beauvoir.
+        \n\nThe Art Deco interior, with its red seating and mirrored walls, offers a quintessential Parisian café experience. Savor a creamy café au lait or a delicious croissant as you people-watch from the terrace.
+    </string>
+
+    <string name="coffee_shops_6"> Tim Wendelboe, Oslo, Norway</string>
+    <string name="coffee_shops_6_description">
+        Named after its founder, a World Barista Champion, Tim Wendelboe in Oslo is renowned for its exceptional coffee. The minimalist and modern setting reflects the shop\'s focus on the quality of the brew. They roast their beans on-site, ensuring freshness and flavor.
+        \n\nTry their meticulously prepared espresso or a refreshing cold brew. The knowledgeable staff is always ready to share their expertise, making it an educational experience for coffee enthusiasts.
+    </string>
+
+    <string name="coffee_shops_7"> Cafe A Brasileira, Lisbon, Portugal</string>
+    <string name="coffee_shops_7_description">
+        Cafe A Brasileira, located in the heart of Lisbon, is one of the city’s oldest and most famous coffee shops. Opened in 1905, it is known for its Art Nouveau interior and its bronze statue of the poet Fernando Pessoa, a frequent patron.
+        \n\nThe café offers a lively atmosphere where you can enjoy a traditional Portuguese bica (espresso) and a pastel de nata (custard tart). It\'s a perfect spot to soak up the local culture.
+    </string>
+
+    <string name="coffee_shops_8">Monmouth Coffee Company, London, England </string>
+    <string name="coffee_shops_8_description">
+        Monmouth Coffee Company in London is a beloved spot for coffee aficionados. Located in Covent Garden, this small but charming shop is dedicated to serving high-quality coffee. They source beans from around the world and roast them on-site.
+        \n\nThe friendly baristas craft excellent espresso and pour-over coffee, making each visit a delightful experience. Their selection of pastries and cakes complements the coffee perfectly.
+    </string>
+
+//Restaurants
+    <string name="restaurants_1"> Osteria Francescana, Modena, Italy </string>
+    <string name="restaurants_1_description">
+        Osteria Francescana, located in Modena, is a world-renowned restaurant helmed by Chef Massimo Bottura. Known for its innovative take on traditional Italian cuisine, it has earned three Michelin stars.
+        \n\nThe intimate and elegant setting makes it perfect for a special dining experience. Highlights include the “Five Ages of Parmigiano Reggiano” and “Oops! I Dropped the Lemon Tart,” showcasing the chef’s creativity and culinary prowess.
+    </string>
+
+    <string name="restaurants_2">  El Celler de Can Roca, Girona, Spain </string>
+    <string name="restaurants_2_description">
+        El Celler de Can Roca is a family-run restaurant in Girona, celebrated for its innovative cuisine and exceptional service. Managed by the Roca brothers, it has been awarded three Michelin stars. The restaurant offers a unique dining experience with dishes like "The World," a gastronomic journey through different flavors.
+        \n\nThe modern and stylish ambiance enhances the overall experience.
+    </string>
+
+    <string name="restaurants_3">  Noma, Copenhagen, Denmark</string>
+    <string name="restaurants_3_description">
+        Noma in Copenhagen is synonymous with New Nordic cuisine. Chef René Redzepi’s creations highlight local ingredients and seasonal flavors, earning Noma two Michelin stars. The restaurant features a rustic yet contemporary design, creating a relaxed dining atmosphere.
+        \n\nSignature dishes include fermented vegetables and reindeer moss, reflecting the restaurant\'s innovative approach to traditional Nordic ingredients.
+    </string>
+
+    <string name="restaurants_4">  Le Jules Verne, Paris, France </string>
+    <string name="restaurants_4_description">
+        Le Jules Verne is a Michelin-starred restaurant located on the second floor of the Eiffel Tower. Offering breathtaking views of Paris, the restaurant serves contemporary French cuisine crafted by renowned chefs. The elegant and modern decor enhances the dining experience.
+        \n\nSignature dishes include lobster and pigeon, paired with an extensive wine list. It\’s a perfect spot for a romantic dinner.
+    </string>
+
+    <string name="restaurants_5"> The Ledbury, London, England</string>
+    <string name="restaurants_5_description">
+        The Ledbury, located in Notting Hill, is a two-Michelin-starred restaurant renowned for its innovative British cuisine. Chef Brett Graham\'s creative dishes feature seasonal ingredients and exquisite presentation.
+        \n\nThe stylish and intimate setting makes it ideal for special occasions. Notable dishes include flame-grilled mackerel and venison. The Ledbury offers a memorable dining experience with impeccable service.
+    </string>
+
+    <string name="restaurants_6"> Schnitzel Haus, Berlin, Germany</string>
+    <string name="restaurants_6_description">
+        Schnitzel Haus in Berlin is a cozy and traditional German restaurant known for its delicious schnitzels. The rustic interior, adorned with wooden furnishings and Bavarian decor, creates a warm and inviting atmosphere.
+        \n\nThe menu features a variety of schnitzels, including the classic Wiener Schnitzel and innovative options like the Schnitzel Cordon Bleu. Pair your meal with a selection from their extensive beer list for an authentic German dining experience.
+    </string>
+
+    <string name="restaurants_7"> The Fish Market, Copenhagen, Denmark</string>
+    <string name="restaurants_7_description">
+        The Fish Market in Copenhagen offers a fresh and vibrant seafood dining experience. Located near the harbor, the restaurant features a modern and airy interior with nautical elements.
+        \n\nThe menu boasts a wide range of seafood dishes, from classic fish and chips to gourmet seafood platters. The Fish Market is known for its sustainably sourced ingredients and flavorful dishes. Enjoy a relaxed meal while overlooking the scenic waterfront.
+    </string>
+
+// Amusement Parks
+    <string name="amusement_Park_1"> Disneyland Paris, France </string>
+    <string name="amusement_Park_1_description">
+        Disneyland Paris offers a magical experience for visitors of all ages. Located just outside Paris, the park features iconic attractions like Sleeping Beauty\'s Castle, Space Mountain, and Pirates of the Caribbean. With themed lands, spectacular shows, and beloved Disney characters, it\'s a perfect destination for family fun and adventure.
+        \n\nEnjoy a variety of dining options and souvenir shops throughout the park.
+    </string>
+
+    <string name="amusement_Park_2"> Europa-Park, Rust, Germany </string>
+    <string name="amusement_Park_2_description">
+        Europa-Park in Rust, Germany, is one of Europe’s largest and most popular amusement parks. It boasts over 100 attractions and shows, including thrilling roller coasters, water rides, and themed areas representing different European countries.
+        \n\nThe park also offers a variety of dining and accommodation options, making it a great destination for an extended stay. Highlights include the Silver Star coaster and the Voletarium flying theater.
+    </string>
+
+    <string name="amusement_Park_3">  PortAventura, Salou, Spain </string>
+    <string name="amusement_Park_3_description">
+        PortAventura in Salou, Spain, is a top-rated theme park offering a mix of thrilling rides and family-friendly attractions. The park features six themed areas, including Mediterranean, Polynesia, and Far West, each with its unique rides and shows.
+        \n\nHighlights include the Dragon Khan roller coaster and the Angkor boat ride. The park also has an adjoining water park and resort hotels, making it a perfect holiday destination
+    </string>
+
+    <string name="amusement_Park_4"> Tivoli Gardens, Copenhagen, Denmark </string>
+    <string name="amusement_Park_4_description">
+        Tivoli Gardens in Copenhagen is one of the world\'s oldest amusement parks, offering a charming mix of rides, gardens, and entertainment. Opened in 1843, it features classic attractions like wooden roller coasters and a beautiful carousel.
+        \n\nThe park also hosts live performances and seasonal events, making it a vibrant destination year-round. The picturesque setting and festive atmosphere make it perfect for families.
+    </string>
+
+    <string name="amusement_Park_5"> Gardaland, Castelnuovo del Garda, Italy </string>
+    <string name="amusement_Park_5_description">
+        Gardaland, located near Lake Garda, is Italy’s premier amusement park. It offers a wide range of attractions, from thrilling roller coasters to themed areas like the underwater world of Atlantis.
+        \n\nThe park also includes live shows, a Sea Life aquarium, and various dining options. Highlights include the Raptor coaster and the Jungle Rapids. Gardaland is a fantastic destination for adventure seekers.
+    </string>
+
+    <string name="amusement_Park_6"> Phantasialand, Brühl, Germany </string>
+    <string name="amusement_Park_6_description">
+        Phantasialand in Brühl, Germany, is known for its immersive themed areas and world-class rides. Attractions include the Taron roller coaster and the Chiapas log flume. The park\'s detailed theming transports visitors to different worlds, from medieval castles to African savannas. Phantasialand also offers a variety of shows and entertainment, making it a well-rounded experience for all ages.
+    </string>
+
+//Shopping Malls
+    <string name="shopping_Mall_1">  Westfield London, London, England</string>
+    <string name="shopping_Mall_1_description">
+        Westfield London, located in White City, is one of the largest shopping malls in Europe. It boasts over 300 stores, including high-end brands like Louis Vuitton and Prada, as well as popular high street shops.
+        \n\nThe mall features a variety of dining options, from casual eateries to upscale restaurants. With a cinema, a bowling alley, and various events throughout the year, Westfield London offers a comprehensive shopping and entertainment experience.
+    </string>
+
+    <string name="shopping_Mall_2"> Galleria Vittorio Emanuele II, Milan, Italy </string>
+    <string name="shopping_Mall_2_description">
+        Galleria Vittorio Emanuele II is not just a shopping mall; it\'s a historic landmark in Milan. Opened in 1877, this stunning arcade features a glass-vaulted roof and intricate mosaics. Home to luxury brands like Gucci and Prada, it offers a sophisticated shopping experience.
+        \n\nThe Galleria also hosts a range of elegant cafes and restaurants, making it a perfect spot to relax and enjoy the architectural beauty while shopping.
+    </string>
+
+    <string name="shopping_Mall_3">  Galeries Lafayette, Paris, France </string>
+    <string name="shopping_Mall_3_description">
+        Galeries Lafayette in Paris is a shopper\'s paradise, known for its magnificent Art Nouveau architecture. The highlight is the stunning glass dome, which provides a breathtaking view.
+        \n\nSpread over ten floors, this department store offers a wide range of fashion, beauty, and home products. It also features gourmet food halls and a rooftop terrace with panoramic views of Paris. Don\'t miss the weekly fashion shows showcasing the latest trends.
+    </string>
+
+    <string name="shopping_Mall_4"> El Corte Inglés, Madrid, Spain</string>
+    <string name="shopping_Mall_4_description">
+        El Corte Inglés is a prominent department store chain in Spain, with its flagship store located in Madrid. This massive shopping center offers everything from fashion and electronics to gourmet food and home decor.
+        /n/nThe store features a rooftop terrace with stunning views of the city, perfect for a relaxing break between shopping sprees. With frequent sales and a wide variety of products, El Corte Inglés is a must-visit for any shopper in Madrid.
+    </string>
+
+    <string name="shopping_Mall_5"> Mall of Scandinavia, Stockholm, Sweden</string>
+    <string name="shopping_Mall_5_description">
+        Mall of Scandinavia, located in Stockholm, is the largest shopping mall in the Nordic countries. It boasts over 200 stores, offering a mix of international and Scandinavian brands. The mall features an array of dining options, from quick bites to fine dining.
+        /n/nEntertainment options include a state-of-the-art cinema and various family-friendly activities. The modern design and spacious layout make it a comfortable and enjoyable shopping destination.
+    </string>
+
+    <string name="shopping_Mall_6">  Plaza Mayor, Malaga, Spain </string>
+    <string name="shopping_Mall_6_description">
+        Plaza Mayor in Malaga is a lively open-air shopping center that combines retail, dining, and entertainment. It offers a variety of stores, including well-known fashion brands and local boutiques.
+        \n\nThe complex also features numerous restaurants, cafes, and a cinema. With its vibrant atmosphere and beautiful Andalusian architecture, Plaza Mayor is a great place to spend a day shopping and enjoying the local culture.
+    </string>
+
+    <string name="shopping_Mall_7"> CentrO, Oberhausen, Germany </string>
+    <string name="shopping_Mall_7_description">
+        CentrO in Oberhausen is one of the largest shopping malls in Germany. It features over 250 stores, ranging from high-street favorites to luxury boutiques. The mall also offers a variety of dining options and a large food court.
+        \n\nEntertainment facilities include a cinema, an aquarium, and a theme park. With its extensive selection of shops and activities, CentrO provides a comprehensive and fun shopping experience for visitors of all ages.
+    </string>
+
+
+//Gyms
+    <string name="gym_1"> Equinox Kensington, London, England </string>
+    <string name="gym_1_description">
+        Equinox Kensington is a premium fitness club located in the heart of London. It offers state-of-the-art equipment, a variety of fitness classes, and luxurious amenities like a spa and a juice bar. The sleek and modern design provides a motivating environment for workouts. Personal training and wellness programs are also available to help members achieve their fitness goals.
+    </string>
+
+    <string name="gym_2"> John Reed Fitness, Berlin, Germany  </string>
+    <string name="gym_2_description">
+        John Reed Fitness in Berlin is known for its unique blend of fitness and music. The gym features vibrant decor, live DJs, and a wide range of workout options, including strength training, cardio, and group classes. The eclectic atmosphere makes workouts enjoyable and energetic. Additional amenities include saunas and relaxation areas, providing a complete fitness and wellness experience.
+    </string>
+
+    <string name="gym_3"> Barry\'s Bootcamp, Stockholm, Sweden  </string>
+    <string name="gym_3_description">
+        Barry\'s Bootcamp in Stockholm offers high-intensity interval training (HIIT) classes that combine cardio and strength training. Known for its energetic atmosphere and motivating instructors, Barry\'s provides a challenging workout experience. The sleek, red-lit studio enhances the intensity of the sessions. Post-workout, members can enjoy nutritious shakes and snacks at the Fuel Bar.
+    </string>
+
+    <string name="gym_4">The Third Space, London, England  </string>
+    <string name="gym_4_description">
+        The Third Space in London is a luxury gym offering a comprehensive range of fitness and wellness services. It features state-of-the-art equipment, an extensive class schedule, and top-notch personal trainers. The gym also includes a spa, swimming pool, and nutrition services. The modern and stylish design creates an inviting atmosphere for all fitness enthusiasts.
+    </string>
+
+    <string name="gym_5"> Reebok CrossFit Louvre, Paris, France </string>
+    <string name="gym_5_description">
+        Reebok CrossFit Louvre in Paris offers high-intensity CrossFit training in a supportive community environment. The gym is equipped with top-tier CrossFit gear and staffed by experienced coaches. Classes are designed to challenge and motivate members, focusing on functional fitness and strength. The vibrant and energetic atmosphere makes it a popular choice for fitness enthusiasts in Paris.
+    </string>
+
+//Cinemas
+    <string name="cinema_1"> Electric Cinema, London, England </string>
+    <string name="cinema_1_description">
+        Electric Cinema in London’s Notting Hill is a historic and luxurious cinema experience. With plush leather armchairs, footstools, and cozy blankets, it offers a comfortable and stylish setting to enjoy the latest films. The cinema also features a bar serving cocktails, wine, and snacks. Its charming and vintage decor adds to the overall unique movie-going experience.
+    </string>
+
+    <string name="cinema_2"> Cinema Paradiso, Amsterdam, Netherlands </string>
+    <string name="cinema_2_description">
+        Cinema Paradiso in Amsterdam is a charming cinema located in a converted church. It offers a mix of mainstream and independent films in a unique and atmospheric setting. The cinema also has a restaurant and bar, making it a perfect spot for a night out. The historic architecture and cozy ambiance provide a memorable movie experience.
+    </string>
+
+    <string name="cinema_3"> Kino International, Berlin, Germany </string>
+    <string name="cinema_3_description">
+        Kino International in Berlin is a classic cinema known for its retro charm and cultural significance. Located on Karl-Marx-Allee, it has a spacious auditorium with comfortable seating and state-of-the-art sound and projection systems. The cinema often hosts premieres, film festivals, and special screenings, making it a hub for movie enthusiasts. Its stylish 1960s design adds to the nostalgic movie-going experience.
+    </string>
+
+    <string name="cinema_4"> Pathé Tuschinski, Amsterdam, Netherlands</string>
+    <string name="cinema_4_description">
+        Pathé Tuschinski in Amsterdam is a historic cinema known for its stunning Art Deco architecture. Opened in 1921, it offers a mix of mainstream and independent films. The opulent interiors, with intricate details and luxurious seating, create a unique movie-going experience. The cinema also hosts special screenings and events, making it a cultural landmark in Amsterdam.
+    </string>
+
+    <string name="cinema_5"> Cinémathèque Française, Paris, France </string>
+    <string name="cinema_5_description">
+        Cinémathèque Française in Paris is a must-visit for film enthusiasts. Dedicated to the preservation and celebration of cinema, it offers a wide range of screenings, from classic films to contemporary works. The museum and library provide a wealth of information on the history of film. The modernist building, designed by Frank Gehry, adds to the cinematic experience.
+    </string>
+
+    <string name="cinema_6"> Filmhouse, Edinburgh, Scotland </string>
+    <string name="cinema_6_description">
+        Filmhouse in Edinburgh is an independent cinema known for its diverse programming. It screens a variety of films, including international cinema, classics, and documentaries. The cozy and welcoming atmosphere makes it a favorite among film buffs. The cinema also hosts the annual Edinburgh International Film Festival, attracting movie lovers from around the world.
+    </string>
+
+
+//Hotels
+    <string name="hotel_1"> The Ritz, London, England</string>
+    <string name="hotel_1_description">
+        The Ritz in London is synonymous with luxury and elegance. Located in the heart of Piccadilly, this iconic hotel offers opulent rooms, exceptional service, and world-class dining. The beautifully decorated rooms and suites provide a blend of classic and contemporary style. Enjoy a traditional afternoon tea in the Palm Court or a gourmet meal at The Ritz Restaurant, making your stay truly memorable.
+    </string>
+
+    <string name="hotel_2"> Hotel de Crillon, Paris, France </string>
+    <string name="hotel_2_description">
+        Hotel de Crillon in Paris is a historic and luxurious hotel situated on Place de la Concorde. Recently renovated, it combines classic French architecture with modern amenities. The elegantly designed rooms and suites offer stunning views of the city. Guests can indulge in fine dining at L\'Ecrin or relax with a drink at the opulent Les Ambassadeurs bar. The hotel\'s spa and wellness facilities ensure a pampering stay.
+    </string>
+
+    <string name="hotel_3"> Hotel Sacher, Vienna, Austria</string>
+    <string name="hotel_3_description">
+        Hotel Sacher in Vienna is renowned for its timeless elegance and historic charm. Located near the State Opera, this luxury hotel offers beautifully appointed rooms and exceptional service. The on-site Cafe Sacher is famous for its original Sacher-Torte, a must-try for visitors. The hotel\'s refined atmosphere and central location make it a perfect choice for exploring Vienna\'s cultural landmarks.
+    </string>
+
+    <string name="hotel_4"> The Savoy, London, England </string>
+    <string name="hotel_4_description">
+        he Savoy in London is an iconic luxury hotel with a rich history. Located on the Strand, it offers opulent rooms, exceptional service, and world-class dining. The hotel\'s renowned restaurants include Gordon Ramsay’s Savoy Grill and the American Bar. The elegant decor and prime location make The Savoy a top choice for discerning travelers.
+    </string>
+
+    <string name="hotel_5"> Hotel Principe di Savoia, Milan, Italy </string>
+    <string name="hotel_5_description">
+        Hotel Principe di Savoia in Milan is a luxurious hotel offering classic Italian elegance. Located near the city center, it features beautifully appointed rooms, a spa, and fine dining options. The rooftop pool and bar provide stunning views of Milan. Known for its impeccable service and sophisticated ambiance, it\’s a perfect choice for a lavish stay.
+    </string>
+
+    <string name="hotel_6"> The Dolder Grand, Zurich, Switzerland </string>
+    <string name="hotel_6_description">
+        The Dolder Grand in Zurich is a luxurious hotel combining historic charm with modern amenities. Situated on a hilltop, it offers breathtaking views of the city and Lake Zurich. The hotel features a renowned spa, gourmet dining, and elegant rooms. The blend of classic and contemporary design creates a sophisticated and tranquil retreat.
+    </string>
+
+//Museums
+    <string name="museum_1"> Louvre Museum, Paris, France </string>
+    <string name="museum_1_description">
+        The Louvre Museum in Paris is one of the world\'s largest and most famous museums. Home to iconic works like the Mona Lisa and the Venus de Milo, it offers an unparalleled collection of art and artifacts spanning thousands of years. The museum\'s stunning architecture, including the modern glass pyramid entrance, adds to its allure. A visit to the Louvre is a must for any art and history enthusiast.
+    </string>
+
+    <string name="museum_2"> Prado Museum, Madrid, Spain</string>
+    <string name="museum_2_description">
+        The Prado Museum in Madrid is a premier art museum known for its extensive collection of European art. Highlights include masterpieces by Velázquez, Goya, and El Greco. The museum\'s elegant neoclassical building provides a fitting backdrop for its impressive exhibits. With over 8,000 paintings and sculptures, the Prado offers a comprehensive journey through the history of Western art.
+    </string>
+
+    <string name="museum_3"> Rijksmuseum, Amsterdam, Netherlands </string>
+    <string name="museum_3_description">
+        The Rijksmuseum in Amsterdam is the Netherlands\' national museum, dedicated to arts and history. It houses a vast collection of Dutch Golden Age paintings, including works by Rembrandt and Vermeer. The museum\'s grand architecture and beautifully landscaped gardens enhance the visitor experience. Highlights include Rembrandt\'s "Night Watch" and the museum\'s extensive collection of Asian art and artifacts.
+    </string>
+
+    <string name="museum_4"> The British Museum, London, England </string>
+    <string name="museum_4_description">
+        The British Museum in London is a world-famous institution housing a vast collection of art and artifacts. Highlights include the Rosetta Stone, the Elgin Marbles, and the Egyptian mummies. The museum’s stunning architecture, including the Great Court, adds to the visitor experience. Entry is free, making it accessible for everyone to explore the treasures of human history.
+    </string>
+
+    <string name="museum_5"> The Vatican Museums, Vatican City </string>
+    <string name="museum_5_description">
+        The Vatican Museums in Vatican City are home to some of the world’s most renowned art collections. Highlights include the Sistine Chapel with Michelangelo’s ceiling, Raphael’s Rooms, and the Gallery of Maps. The museums span several centuries of art, offering a comprehensive journey through history. The grandeur and artistic significance make it a must-visit for any art lover.
+    </string>
+
+    <string name="museum_6"> The Hermitage Museum, St. Petersburg, Russia </string>
+    <string name="museum_6_description">
+        The Hermitage Museum in St. Petersburg is one of the largest and oldest museums in the world. Founded by Catherine the Great, it houses over three million items, including masterpieces by Rembrandt, Leonardo da Vinci, and Michelangelo. The museum’s opulent Winter Palace and extensive art collections offer an unparalleled cultural experience. The grandeur and historical significance make it a top destination for art enthusiasts.
+    </string>
+
+
+    <string name="back_button">Back Button\n</string>
+    <string name="favorite">Favorite</string>
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_favorite">Favorites</string>
+    <string name="category">Category</string>
+    <string name="add_favorite">Add as a favorite</string>
+    <string name="remove_favorite">Remove from favorite</string>
+
+
+</resources>

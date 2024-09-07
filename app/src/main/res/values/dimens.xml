@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_large">15dp</dimen>
+    <dimen name="font_size_large">10dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="card2_corner_radius">30dp</dimen>
+    <dimen name="card_image_height">135dp</dimen>
+    <dimen name="card_text_vertical_space">7dp</dimen>
+    <dimen name="padding_detail_content_horizontal">40dp</dimen>
+</resources>
