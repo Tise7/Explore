@@ -20,7 +20,7 @@ object AppViewModelProvider {
         // Initializer for ExploreViewmodel
         initializer {
             ExploreViewmodel(
-                exploreApplication().favoriteDataStoreManager
+//                exploreApplication().favoriteDataStoreManager
             )
         }
    }

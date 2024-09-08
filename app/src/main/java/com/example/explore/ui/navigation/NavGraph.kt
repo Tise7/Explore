@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -28,6 +29,7 @@ fun ExploreNavigation(
     modifier: Modifier = Modifier
 ) {
     val currentImageResource by exploreViewmodel.currentImageResource.collectAsState()
+    val favoriteFunMenus by exploreViewmodel.favoriteFunMenus.collectAsState()
     val isLandscape by exploreViewmodel.isLandscape.collectAsState()
 
 
@@ -61,10 +63,12 @@ fun ExploreNavigation(
         composable(route = Menu.route) {
             exploreUiState.currentCategory?.let { it1 ->
                 FunMenuList(
-                    funMenu = it1.categoryList,
-                    onFavoriteClick = { updatedFunMenu ->
-                        exploreViewmodel.updateFunMenu(updatedFunMenu)
+//                    funMenu = it1.categoryList,
+                    onFavoriteClick = { it, updatedFunMenu ->
+                        exploreViewmodel.updateFunMenu(it, updatedFunMenu)
                     },
+                    favoriteFunMenus = favoriteFunMenus,
+                    category = it1,
                     onItemClick = { funMenu ->
                         exploreViewmodel.updateCurrentFunMenu(funMenu)
                         navController.navigate(Detail.route)
@@ -80,41 +84,45 @@ fun ExploreNavigation(
             )
         }
         composable(route = ExpandedCategory.route) {
-//            val onCategoryClickRemembered = remember {
-//                { category: com.example.funeu.data.Category ->
-//                    viewModel.updateCurrentCategory(category)
-//                    viewModel.updateCurrentFunMenu(null)
-//                    navController.navigate(ExpandedMenu.route)
-//                }
-//            }
-//            ExpandedCategoryList(
-//                categories = uiState.categoryData,
-//                imageRes = currentImageResource,
-//                onCategoryClick = onCategoryClickRemembered
-//            )
-            ExpandedCategoryList(
-                categories = exploreUiState.categoryData,
-                imageRes = currentImageResource,
-                onCategoryClick = { category ->
+            val onCategoryClickRemembered = remember {
+                { category: com.example.explore.data.Category ->
                     exploreViewmodel.updateCurrentCategory(category)
                     exploreViewmodel.updateCurrentFunMenu(null)
                     navController.navigate(ExpandedMenu.route)
                 }
+            }
+            ExpandedCategoryList(
+                categories = exploreUiState.categoryData,
+                imageRes = currentImageResource,
+                onCategoryClick = onCategoryClickRemembered
             )
+//            ExpandedCategoryList(
+//                categories = exploreUiState.categoryData,
+//                imageRes = currentImageResource,
+//                onCategoryClick = { category ->
+//                    exploreViewmodel.updateCurrentCategory(category)
+//                    exploreViewmodel.updateCurrentFunMenu(null)
+//                    navController.navigate(ExpandedMenu.route)
+//                }
+//            )
         }
         composable(route = ExpandedMenu.route) {
-            ExpandedMenuScreen(
-                funMenu = exploreUiState.currentCategory?.categoryList
-                    ?: emptyList(),
-                onMenuClick = { funMenu ->
-                    exploreViewmodel.updateCurrentFunMenu(funMenu)
-                },
-                onFavoriteClick = {updatedFunMenu ->
-                    exploreViewmodel.updateFunMenu(updatedFunMenu)
-                },
-                selectedCategory = exploreUiState.currentCategory,
-                selectedMenu = exploreUiState.currentFunMenu
-            )
+            exploreUiState.currentCategory?.let { category ->
+                ExpandedMenuScreen(
+//                    funMenu = exploreUiState.currentCategory.categoryList,
+//                        ?: emptyList(),
+                    onMenuClick = { funMenu ->
+                        exploreViewmodel.updateCurrentFunMenu(funMenu)
+                    },
+                    onFavoriteClick = {it, updatedFunMenu ->
+                        exploreViewmodel.updateFunMenu( it, updatedFunMenu)
+                    },
+                    favoriteFunMenus = favoriteFunMenus,
+                    selectedCategory = exploreUiState.currentCategory,
+                    category = category,
+                    selectedMenu = exploreUiState.currentFunMenu
+                )
+            }
         }
     }
 }

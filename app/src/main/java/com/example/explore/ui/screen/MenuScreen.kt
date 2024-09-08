@@ -22,18 +22,16 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.explore.R
+import com.example.explore.data.Category
 import com.example.explore.data.FunMenu
 import com.example.explore.ui.reuseables.ImageResource
-
+import com.example.explore.ui.viewModel.FavoriteKey
 
 
 @Composable
@@ -93,12 +91,13 @@ fun FunMenuCard (
 
 @Composable
 fun FunMenuList (
-    funMenu: List<FunMenu>,
+    category: Category,
+//    funMenu: List<FunMenu>,
     onItemClick:(FunMenu) -> Unit,
-    onFavoriteClick: (FunMenu) -> Unit,
+    onFavoriteClick: (Category, FunMenu) -> Unit,
+    favoriteFunMenus: Set<FavoriteKey>,
     modifier: Modifier = Modifier
 ) {
-    val rememberedCategories = rememberSaveable { funMenu }
 
     LazyColumn(
         modifier = modifier
@@ -110,17 +109,16 @@ fun FunMenuList (
         ),
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_large)),
     ) {
-        items(items = rememberedCategories, key = { funMenu -> funMenu.id }) { funMenu ->
-            val isFavorite = remember { mutableStateOf(funMenu.isFavorite) }
+        items(items =  category.categoryList, key = { funMenu -> "${funMenu.id}-${category.id}"  }) { funMenu ->
+            val isFavorite = FavoriteKey(category.id, funMenu.id) in favoriteFunMenus
             FunMenuCard(
                 imageRes = funMenu.imageResourceId,
                 titleRes = funMenu.titleResourceId,
                 onItemClick  = { onItemClick(funMenu) },
-                icon = if (isFavorite.value) Icons.Filled.Favorite else Icons.Default.FavoriteBorder,
-                iconContentDescription = if (isFavorite.value) R.string.remove_favorite else R.string.add_favorite,
+                icon = if (isFavorite) Icons.Filled.Favorite else Icons.Default.FavoriteBorder,
+                iconContentDescription = if (isFavorite) R.string.remove_favorite else R.string.add_favorite,
                 onFavoriteClick = {
-                    isFavorite.value = !isFavorite.value
-                    onFavoriteClick(funMenu.copy(isFavorite = isFavorite.value))
+                    onFavoriteClick(category, funMenu)
                 }
             )
         }

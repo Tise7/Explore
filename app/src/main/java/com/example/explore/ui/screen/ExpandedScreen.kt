@@ -12,6 +12,7 @@ import androidx.compose.ui.res.painterResource
 import com.example.explore.data.Category
 import com.example.explore.data.FunMenu
 import com.example.explore.ui.reuseables.RandomImageResource
+import com.example.explore.ui.viewModel.FavoriteKey
 
 
 @Composable
@@ -42,11 +43,13 @@ fun ExpandedCategoryList(
 
 @Composable
 fun ExpandedMenuScreen(
-    funMenu: List<FunMenu>,
+    category: Category,
+//    funMenu: List<FunMenu>,
     onMenuClick: (FunMenu) -> Unit,
     selectedCategory: Category?,
     selectedMenu: FunMenu?,
-    onFavoriteClick: (FunMenu) -> Unit,
+    onFavoriteClick: (Category, FunMenu) -> Unit,
+    favoriteFunMenus: Set<FavoriteKey>,
     modifier: Modifier = Modifier
 ){
     Row(
@@ -55,10 +58,12 @@ fun ExpandedMenuScreen(
     ){
         Column(modifier = modifier.weight(1.2f)) {
             FunMenuList(
-                funMenu = funMenu,
-                onFavoriteClick = { updatedFunMenu ->
-                    onFavoriteClick(updatedFunMenu)
+//                funMenu = funMenu,
+                onFavoriteClick = {category, updatedFunMenu ->
+                    onFavoriteClick(category, updatedFunMenu)
                 },
+                favoriteFunMenus = favoriteFunMenus,
+                category = category,
                 onItemClick = { funMenu -> onMenuClick(funMenu)}
             )
         }
