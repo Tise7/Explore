@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.explore.data.AppImageResources
 import com.example.explore.data.Category
+import com.example.explore.data.FavoriteDataStoreManager
 import com.example.explore.data.FunListDataProvider
 import com.example.explore.data.FunMenu
 import kotlinx.coroutines.delay
@@ -14,14 +15,22 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
-
 class ExploreViewmodel
-//    (private val favoriteDataStoreManager: FavoriteDataStoreManager)
+    (private val favoriteDataStoreManager: FavoriteDataStoreManager)
 : ViewModel() {
     private val _exploreUiState = MutableStateFlow(ExploreUiState())
     val exploreUiState: StateFlow<ExploreUiState> = _exploreUiState
 
+    private val _currentImageResource = MutableStateFlow(AppImageResources.images.resources.first())
+    val currentImageResource: StateFlow<Int> = _currentImageResource.asStateFlow()
+
+    private val _favoriteFunMenus = MutableStateFlow<Set<FavoriteKey>>(emptySet())
+    val favoriteFunMenus: StateFlow<Set<FavoriteKey>> = _favoriteFunMenus.asStateFlow()
+
     init {
+        viewModelScope.launch {
+            _favoriteFunMenus.value = favoriteDataStoreManager.loadFavoriteFunMenus()
+        }
         initializeUiState()
         startImageRotation()
     }
@@ -48,8 +57,6 @@ class ExploreViewmodel
         }
     }
 
-    private val _currentImageResource = MutableStateFlow(AppImageResources.images.resources.first())
-    val currentImageResource: StateFlow<Int> = _currentImageResource.asStateFlow()
 
     private fun startImageRotation() {
         viewModelScope.launch {
@@ -61,8 +68,6 @@ class ExploreViewmodel
         }
     }
 
-    private val _favoriteFunMenus = MutableStateFlow<Set<FavoriteKey>>(emptySet())
-    val favoriteFunMenus: StateFlow<Set<FavoriteKey>> = _favoriteFunMenus.asStateFlow()
 
     fun updateFavoriteFunMenu(category: Category, updatedFavoriteFunMenu: FunMenu) {
         viewModelScope.launch {
@@ -72,6 +77,7 @@ class ExploreViewmodel
             } else {
                 _favoriteFunMenus.value += key
             }
+            favoriteDataStoreManager.saveFavoriteFunMenus(_favoriteFunMenus.value)
         }
     }
 }

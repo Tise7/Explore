@@ -9,7 +9,8 @@ val Screens = listOf(
     Category,
     Menu,
     Favorite,
-    Detail,
+    NomDetail,
+    ExpDetail,
     ExpandedCategory,
     ExpandedMenu
 )
@@ -31,8 +32,11 @@ object Favorite : Destination {
     override val route = "favorite"
 }
 
-object Detail : Destination {
-    override val route = "detail"
+object NomDetail : Destination {
+    override val route = "nomDetail"
+}
+object ExpDetail : Destination {
+    override val route = "expDetail"
 }
 
 object ExpandedCategory : Destination {

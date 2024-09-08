@@ -18,7 +18,8 @@ import com.example.explore.R
 import com.example.explore.ui.screenOrientation.rememberDeviceTypeHelper
 import com.example.explore.ui.navigation.BottomAppBar
 import com.example.explore.ui.navigation.Category
-import com.example.explore.ui.navigation.Detail
+import com.example.explore.ui.navigation.ExpDetail
+import com.example.explore.ui.navigation.NomDetail
 import com.example.explore.ui.navigation.ExpandedCategory
 import com.example.explore.ui.navigation.ExpandedMenu
 import com.example.explore.ui.navigation.ExploreNavigation
@@ -72,9 +73,17 @@ fun ExploreScreen(
                             navigateUp = { navController.navigateUp() }
                         )
                     }
-                    Detail -> {
+                    NomDetail -> {
                         TopAppBar(
                             defaultTitle = "",
+                            canNavigateBack = canNavigateBack,
+                            navigateUp = { navController.navigateUp() }
+                        )
+                    }
+                    ExpDetail -> {
+                        TopAppBar(
+                            defaultTitle = "",
+                            titleResourceId = R.string.bottom_navigation_favorite,
                             canNavigateBack = canNavigateBack,
                             navigateUp = { navController.navigateUp() }
                         )

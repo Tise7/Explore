@@ -92,7 +92,7 @@ fun BottomAppBar(
                             currentScreen in setOf(
                                 Category.route,
                                 Menu.route,
-                                Detail.route
+                                NomDetail.route,
                             )
                         ) Icons.Default.Home
                         else Icons.Outlined.Home,
@@ -113,7 +113,7 @@ fun BottomAppBar(
             selected = currentScreen in setOf(
                 Category.route,
                 Menu.route,
-                Detail.route
+                NomDetail.route
             ),
             modifier = modifier.animateContentSize()
         )
@@ -126,7 +126,7 @@ fun BottomAppBar(
                         currentScreen in setOf(
                             Category.route,
                             Menu.route,
-                            Detail.route
+                            NomDetail.route
                         )
                     ) Icons.Outlined.FavoriteBorder
                     else Icons.Outlined.Favorite,
@@ -143,7 +143,10 @@ fun BottomAppBar(
             colors = NavigationBarItemDefaults.colors(
                 indicatorColor = Color.Transparent,
             ),
-            selected = currentScreen == Favorite.route,
+            selected = currentScreen in setOf(
+                Favorite.route,
+                ExpDetail.route
+            ),
             onClick = { onFavoritesClick() },
             modifier = modifier.animateContentSize()
 

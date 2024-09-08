@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import com.example.explore.ui.screenOrientation.DeviceTypeHelper
 import com.example.explore.ui.screens.CategoryList
 import com.example.explore.ui.screens.ExpandedCategoryList
+import com.example.explore.ui.screens.ExpandedDetailScreen
 import com.example.explore.ui.screens.ExpandedMenuScreen
 import com.example.explore.ui.screens.FavoriteScreen
 import com.example.explore.ui.screens.FunMenuList
@@ -49,7 +50,18 @@ fun ExploreNavigation(
             )
         }
         composable(route = Favorite.route) {
-            FavoriteScreen()
+            exploreUiState.currentCategory?.let {
+                FavoriteScreen(
+                    onItemClick = { funMenu, _ ->
+                        exploreViewmodel.updateCurrentFunMenu( funMenu)
+                        navController.navigate(ExpDetail.route)
+                    },
+                    onFavoriteClick = {updatedFunMenu, it ->
+                        exploreViewmodel.updateFavoriteFunMenu(it, updatedFunMenu)
+                    },
+                    viewModel = exploreViewmodel
+                )
+            }
         }
 
         composable(route = Category.route) {
@@ -72,13 +84,21 @@ fun ExploreNavigation(
                     favoriteFunMenus = favoriteFunMenus,
                     onItemClick = { funMenu ->
                         exploreViewmodel.updateCurrentFunMenu(funMenu)
-                        navController.navigate(Detail.route)
+                        navController.navigate(NomDetail.route)
                     }
                 )
             }
         }
-        composable(route = Detail.route) {
+        composable(route = NomDetail.route) {
             NormalDetailScreen(
+                imageRes = exploreUiState.currentFunMenu?.imageResourceId ?: 0,
+                titleRes = exploreUiState.currentFunMenu?.titleResourceId ?: 0,
+                descriptionRes = exploreUiState.currentFunMenu?.descriptionResourceId ?: 0
+            )
+        }
+
+        composable(route = ExpDetail.route) {
+            ExpandedDetailScreen(
                 imageRes = exploreUiState.currentFunMenu?.imageResourceId ?: 0,
                 titleRes = exploreUiState.currentFunMenu?.titleResourceId ?: 0,
                 descriptionRes = exploreUiState.currentFunMenu?.descriptionResourceId ?: 0

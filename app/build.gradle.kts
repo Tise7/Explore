@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
-    id("com.google.devtools.ksp") version "2.0.20-1.0.25"
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -72,15 +72,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.savedstate)
     implementation(libs.androidx.core.ktx)
+
+    //Datastore
     implementation(libs.androidx.datastore.preferences.v110alpha01)
 
-    implementation(libs.kotlinx.serialization.json)
-
-
-    //Room
-    implementation(libs.androidx.room.runtime)
-    ksp("androidx.room:room-compiler:${rootProject.extra["room_version"]}")
-    implementation(libs.androidx.room.ktx)
 
 
     // Testing dependencies

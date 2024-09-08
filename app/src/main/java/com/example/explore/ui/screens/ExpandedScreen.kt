@@ -59,7 +59,6 @@ fun ExpandedMenuScreen(
     ){
         Column(modifier = modifier.weight(1.2f)) {
             FunMenuList(
-//                funMenu = funMenu,
                 onFavoriteClick = {category, updatedFunMenu ->
                     onFavoriteClick(category, updatedFunMenu)
                 },
@@ -69,9 +68,7 @@ fun ExpandedMenuScreen(
             )
         }
 
-        Column(modifier = modifier
-            .weight(1.5f)
-        ) {
+        Column(modifier = modifier.weight(1.5f)) {
             if (selectedMenu == null) {
                 selectedCategory?.let { category ->
                     Image(

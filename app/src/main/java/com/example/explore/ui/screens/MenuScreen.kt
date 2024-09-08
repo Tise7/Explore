@@ -80,7 +80,8 @@ fun FunMenuCard (
                 ) {
                     Icon(
                         imageVector = icon,
-                        contentDescription = stringResource(iconContentDescription)
+                        contentDescription = stringResource(iconContentDescription),
+                        tint = MaterialTheme.colorScheme.primary,
                     )
                 }
             }
