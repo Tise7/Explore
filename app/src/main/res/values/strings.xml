@@ -320,7 +320,7 @@
 
 
     <string name="back_button">Back Button\n</string>
-    <string name="favorite">Favorite</string>
+    <string name="favorite">Favorites</string>
     <string name="bottom_navigation_home">Home</string>
     <string name="bottom_navigation_favorite">Favorites</string>
     <string name="category">Category</string>

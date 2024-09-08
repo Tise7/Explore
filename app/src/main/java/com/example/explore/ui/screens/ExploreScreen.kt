@@ -91,7 +91,7 @@ fun ExploreScreen(
                     Favorite -> {
                         TopAppBar(
                             defaultTitle = "",
-                            titleResourceId = R.string.bottom_navigation_favorite,
+                            titleResourceId = R.string.favorite,
                             canNavigateBack = canNavigateBack,
                             navigateUp = { navController.navigateUp() }
                         )
