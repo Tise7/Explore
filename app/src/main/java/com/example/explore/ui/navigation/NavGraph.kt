@@ -50,7 +50,7 @@ fun ExploreNavigation(
             )
         }
         composable(route = Favorite.route) {
-            exploreUiState.currentCategory?.let {
+            exploreUiState.currentCategory?.let { _ ->
                 FavoriteScreen(
                     onItemClick = { funMenu, _ ->
                         exploreViewmodel.updateCurrentFunMenu( funMenu)
