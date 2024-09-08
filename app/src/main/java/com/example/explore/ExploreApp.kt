@@ -2,7 +2,7 @@ package com.example.explore
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.example.explore.ui.screen.ExploreScreen
+import com.example.explore.ui.screens.ExploreScreen
 
 
 @Composable

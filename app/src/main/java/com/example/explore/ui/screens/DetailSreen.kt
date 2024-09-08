@@ -1,4 +1,4 @@
-package com.example.explore.ui.screen
+package com.example.explore.ui.screens
 
 import androidx.compose.animation.core.MutableTransitionState
 import androidx.compose.animation.core.Spring
@@ -6,7 +6,6 @@ import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.rememberTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,9 +15,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuOpen
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -66,7 +72,6 @@ fun NormalDetailScreen(
                 modifier = modifier
                     .fillMaxHeight()
                     .padding(top = 390.dp)
-
             ) {
                 Column(
                     verticalArrangement = Arrangement.Center,
@@ -128,11 +133,11 @@ fun ExpandedDetailScreen(
             }
         },
         label = "cardHeight"
-    ) { if (it) 90.dp - 0.dp else -(0.dp - 430.dp)}
+    ) { if (it) 0.dp else 700.dp }
 
     Box(modifier = modifier) {
         Column(modifier = modifier) {
-            Box {
+            Box{
                 Image(
                     painter = painterResource(imageRes),
                     contentDescription = null,
@@ -140,49 +145,69 @@ fun ExpandedDetailScreen(
                     contentScale = ContentScale.Crop,
                     modifier = modifier
                         .fillMaxWidth()
-                        .height(660.dp)
+                        .fillMaxHeight()
                 )
-                Box (modifier = Modifier
-                    .align(Alignment.BottomCenter)
-                    .offset(y = cardOffset)
+                FloatingActionButton(
+                    onClick = {
+                        expanded = !expanded
+                        transitionState.targetState = !expanded
+                    },
+                    containerColor = if (expanded)  MaterialTheme.colorScheme.surfaceDim else MaterialTheme.colorScheme.inverseSurface,
+                    contentColor = if (expanded)  MaterialTheme.colorScheme.inverseSurface else MaterialTheme.colorScheme.surfaceDim,
+                    modifier = modifier
+                        .align(Alignment.TopEnd)
+                        .padding(top = 16.dp, bottom = 16.dp, end = 50.dp)
+
                 ) {
-                    Card (
-                        elevation = CardDefaults.cardElevation(),
-                        shape = RoundedCornerShape( topStart = 70.dp),
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.surfaceDim
-                        ),
+                    Icon(
+                        imageVector = if (expanded) Icons.AutoMirrored.Filled.MenuOpen else Icons.Filled.Close,
+                        contentDescription = if (expanded) "Collapse" else "Expand",
+                    )
+                }
+                Box (modifier = modifier
+                    .offset(x = cardOffset)
+                    .fillMaxHeight()
+                ) {
+                    Column(
                         modifier = modifier
-                            .height(500.dp)
-                            .clickable {
-                                expanded = !expanded
-                                transitionState.targetState = !expanded
-                            }
+                            .fillMaxHeight(),
                     ) {
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = modifier.fillMaxWidth()
+                        Card (
+                            elevation = CardDefaults.cardElevation(),
+                            shape = RoundedCornerShape( topStart = 70.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.surfaceDim,
+                                contentColor = MaterialTheme.colorScheme.inverseSurface,
+                            ),
+                            modifier = modifier
+                                .padding(top = 80.dp)
+                                .fillMaxHeight()
                         ) {
-                            Text(
-                                text = stringResource(titleRes),
-                                style = MaterialTheme.typography.titleLarge,
-                                textAlign = TextAlign.Start,
-                                color = MaterialTheme.colorScheme.inverseSurface,
+
+                            Column(
+                                verticalArrangement = Arrangement.Center,
+                                horizontalAlignment = Alignment.CenterHorizontally,
                                 modifier = modifier
-                                    .padding(
-                                        horizontal = 35.dp,
-                                        vertical = 15.dp
-                                    )
-                            )
-                            Text(
-                                text = stringResource(descriptionRes),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onTertiaryContainer,
-                                modifier = modifier
-                                    .padding(top = 15.dp)
-                                    .padding(horizontal = dimensionResource(R.dimen.padding_detail_content_horizontal))
-                            )
+                                    .verticalScroll(rememberScrollState())
+                                    .fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = stringResource(titleRes),
+                                    style = MaterialTheme.typography.titleLarge,
+                                    textAlign = TextAlign.Start,
+                                    modifier = modifier
+                                        .padding(
+                                            horizontal = 35.dp,
+                                            vertical = 15.dp
+                                        )
+                                )
+                                Text(
+                                    text = stringResource(descriptionRes),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    modifier = modifier
+                                        .padding(horizontal = 70.dp)
+                                )
+                            }
                         }
                     }
                 }
@@ -190,7 +215,6 @@ fun ExpandedDetailScreen(
         }
     }
 }
-
 
 @Preview
 @Composable

@@ -10,13 +10,14 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.explore.ui.screen.CategoryList
-import com.example.explore.ui.screen.ExpandedCategoryList
-import com.example.explore.ui.screen.ExpandedMenuScreen
-import com.example.explore.ui.screen.FavoriteScreen
-import com.example.explore.ui.screen.FunMenuList
-import com.example.explore.ui.screen.NormalDetailScreen
-import com.example.explore.ui.screen.WelcomeScreen
+import com.example.explore.ui.screenOrientation.DeviceTypeHelper
+import com.example.explore.ui.screens.CategoryList
+import com.example.explore.ui.screens.ExpandedCategoryList
+import com.example.explore.ui.screens.ExpandedMenuScreen
+import com.example.explore.ui.screens.FavoriteScreen
+import com.example.explore.ui.screens.FunMenuList
+import com.example.explore.ui.screens.NormalDetailScreen
+import com.example.explore.ui.screens.WelcomeScreen
 import com.example.explore.ui.viewModel.ExploreUiState
 import com.example.explore.ui.viewModel.ExploreViewmodel
 
@@ -25,13 +26,14 @@ import com.example.explore.ui.viewModel.ExploreViewmodel
 fun ExploreNavigation(
     exploreUiState: ExploreUiState,
     exploreViewmodel: ExploreViewmodel,
+    deviceTypeHelper: DeviceTypeHelper,
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
     val currentImageResource by exploreViewmodel.currentImageResource.collectAsState()
     val favoriteFunMenus by exploreViewmodel.favoriteFunMenus.collectAsState()
-    val isLandscape by exploreViewmodel.isLandscape.collectAsState()
 
+    val isLandscapeAndTablet = deviceTypeHelper.isLandscape() || deviceTypeHelper.isTablet()
 
     NavHost(
         navController = navController,
@@ -41,7 +43,7 @@ fun ExploreNavigation(
         composable(route = Welcome.route) {
             WelcomeScreen(
                 onNavigateToMenuList = {
-                    val nextRoute = if (isLandscape) ExpandedCategory.route else Category.route
+                    val nextRoute = if (isLandscapeAndTablet) ExpandedCategory.route else Category.route
                     navController.navigateSingleTopTo(nextRoute)
                 }
             )
@@ -55,7 +57,7 @@ fun ExploreNavigation(
                 categories = exploreUiState.categoryData,
                 onItemClick = { category ->
                     exploreViewmodel.updateCurrentCategory(category)
-                    val nextRoute = if (isLandscape) ExpandedMenu.route else Menu.route
+                    val nextRoute = if (isLandscapeAndTablet) ExpandedMenu.route else Menu.route
                     navController.navigate(nextRoute)
                 }
             )
@@ -63,12 +65,11 @@ fun ExploreNavigation(
         composable(route = Menu.route) {
             exploreUiState.currentCategory?.let { it1 ->
                 FunMenuList(
-//                    funMenu = it1.categoryList,
+                    category = it1,
                     onFavoriteClick = { it, updatedFunMenu ->
-                        exploreViewmodel.updateFunMenu(it, updatedFunMenu)
+                        exploreViewmodel.updateFavoriteFunMenu(it, updatedFunMenu)
                     },
                     favoriteFunMenus = favoriteFunMenus,
-                    category = it1,
                     onItemClick = { funMenu ->
                         exploreViewmodel.updateCurrentFunMenu(funMenu)
                         navController.navigate(Detail.route)
@@ -109,18 +110,17 @@ fun ExploreNavigation(
         composable(route = ExpandedMenu.route) {
             exploreUiState.currentCategory?.let { category ->
                 ExpandedMenuScreen(
-//                    funMenu = exploreUiState.currentCategory.categoryList,
-//                        ?: emptyList(),
                     onMenuClick = { funMenu ->
                         exploreViewmodel.updateCurrentFunMenu(funMenu)
                     },
+                    category = category,
+                    selectedMenu = exploreUiState.currentFunMenu,
                     onFavoriteClick = {it, updatedFunMenu ->
-                        exploreViewmodel.updateFunMenu( it, updatedFunMenu)
+                        exploreViewmodel.updateFavoriteFunMenu( it, updatedFunMenu)
                     },
                     favoriteFunMenus = favoriteFunMenus,
                     selectedCategory = exploreUiState.currentCategory,
-                    category = category,
-                    selectedMenu = exploreUiState.currentFunMenu
+
                 )
             }
         }
@@ -130,13 +130,13 @@ fun ExploreNavigation(
 
 fun NavHostController.navigateSingleTopTo(route: String) =
     this.navigate(route) {
-        if (currentDestination?.route != route) {
+//        if (currentDestination?.route != route) {
             popUpTo(
                 this@navigateSingleTopTo.graph.findStartDestination().id
             ) {
                 saveState = true
             }
-        }
+//        }
         launchSingleTop = true
         restoreState = true
     }

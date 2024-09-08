@@ -1,4 +1,4 @@
-package com.example.explore.ui.screen
+package com.example.explore.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -92,7 +92,6 @@ fun FunMenuCard (
 @Composable
 fun FunMenuList (
     category: Category,
-//    funMenu: List<FunMenu>,
     onItemClick:(FunMenu) -> Unit,
     onFavoriteClick: (Category, FunMenu) -> Unit,
     favoriteFunMenus: Set<FavoriteKey>,
@@ -117,9 +116,7 @@ fun FunMenuList (
                 onItemClick  = { onItemClick(funMenu) },
                 icon = if (isFavorite) Icons.Filled.Favorite else Icons.Default.FavoriteBorder,
                 iconContentDescription = if (isFavorite) R.string.remove_favorite else R.string.add_favorite,
-                onFavoriteClick = {
-                    onFavoriteClick(category, funMenu)
-                }
+                onFavoriteClick = { onFavoriteClick(category, funMenu) }
             )
         }
     }

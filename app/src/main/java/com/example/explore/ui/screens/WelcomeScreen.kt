@@ -1,4 +1,4 @@
-package com.example.explore.ui.screen
+package com.example.explore.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

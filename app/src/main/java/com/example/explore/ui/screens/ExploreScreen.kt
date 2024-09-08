@@ -1,4 +1,4 @@
-package com.example.explore.ui.screen
+package com.example.explore.ui.screens
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -16,7 +15,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.explore.R
-import com.example.explore.ui.viewModel.AppViewModelProvider
+import com.example.explore.ui.screenOrientation.rememberDeviceTypeHelper
+import com.example.explore.ui.navigation.BottomAppBar
 import com.example.explore.ui.navigation.Category
 import com.example.explore.ui.navigation.Detail
 import com.example.explore.ui.navigation.ExpandedCategory
@@ -24,12 +24,12 @@ import com.example.explore.ui.navigation.ExpandedMenu
 import com.example.explore.ui.navigation.ExploreNavigation
 import com.example.explore.ui.navigation.Favorite
 import com.example.explore.ui.navigation.Menu
+import com.example.explore.ui.navigation.Rail
 import com.example.explore.ui.navigation.Screens
+import com.example.explore.ui.navigation.TopAppBar
 import com.example.explore.ui.navigation.Welcome
 import com.example.explore.ui.navigation.navigateSingleTopTo
-import com.example.explore.ui.navigation.BottomAppBar
-import com.example.explore.ui.navigation.Rail
-import com.example.explore.ui.navigation.TopAppBar
+import com.example.explore.ui.viewModel.AppViewModelProvider
 import com.example.explore.ui.viewModel.ExploreViewmodel
 
 
@@ -42,17 +42,16 @@ fun ExploreScreen(
     val uiState by exploreViewmodel.exploreUiState.collectAsState()
     val selectedCategoryTitleResourceId = uiState.currentCategory?.titleResourceId
 
+    val deviceTypeHelper = rememberDeviceTypeHelper()
     val configuration = LocalConfiguration.current
-    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE || configuration.screenWidthDp > 600
 
-    LaunchedEffect(isLandscape) {
-        exploreViewmodel.updateOrientation(isLandscape)
-    }
 
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = backStackEntry?.destination
     val currentScreen = Screens.find{ it.route == currentDestination?.route } ?: Welcome
     val canNavigateBack = navController.previousBackStackEntry != null && currentScreen != Category && currentScreen != Favorite && currentScreen != ExpandedCategory
+
 
     Scaffold(
         topBar = {
@@ -141,9 +140,12 @@ fun ExploreScreen(
                     exploreUiState = uiState,
                     exploreViewmodel = exploreViewmodel,
                     navController = navController,
+                    deviceTypeHelper = deviceTypeHelper,
                     modifier = modifier.padding(innerPadding)
                 )
             }
         }
     }
 }
+
+

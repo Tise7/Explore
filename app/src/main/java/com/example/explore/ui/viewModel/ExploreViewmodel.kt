@@ -24,9 +24,7 @@ class ExploreViewmodel
     init {
         initializeUiState()
         startImageRotation()
-//        loadFavoriteFunMenus()
     }
-
 
     private fun initializeUiState() {
         _exploreUiState.update {
@@ -38,11 +36,16 @@ class ExploreViewmodel
         }
     }
 
-    private var _isLandscape = MutableStateFlow(false)
-    val isLandscape: StateFlow<Boolean> = _isLandscape.asStateFlow()
+    fun updateCurrentCategory(category: Category) {
+        _exploreUiState.update { currentState ->
+            currentState.copy(currentCategory = category)
+        }
+    }
 
-    fun updateOrientation(isLandscape: Boolean) {
-        _isLandscape.value = isLandscape
+    fun updateCurrentFunMenu(funMenu: FunMenu?) {
+        _exploreUiState.update { currentState ->
+            currentState.copy(currentFunMenu = funMenu)
+        }
     }
 
     private val _currentImageResource = MutableStateFlow(AppImageResources.images.resources.first())
@@ -58,25 +61,12 @@ class ExploreViewmodel
         }
     }
 
-
-    fun updateCurrentCategory(category: Category) {
-        _exploreUiState.update { currentState ->
-            currentState.copy(currentCategory = category)
-        }
-    }
-
-    fun updateCurrentFunMenu(funMenu: FunMenu?) {
-        _exploreUiState.update { currentState ->
-            currentState.copy(currentFunMenu = funMenu)
-        }
-    }
-
     private val _favoriteFunMenus = MutableStateFlow<Set<FavoriteKey>>(emptySet())
     val favoriteFunMenus: StateFlow<Set<FavoriteKey>> = _favoriteFunMenus.asStateFlow()
 
-    fun updateFunMenu(category: Category, updatedFunMenu: FunMenu) {
+    fun updateFavoriteFunMenu(category: Category, updatedFavoriteFunMenu: FunMenu) {
         viewModelScope.launch {
-            val key = FavoriteKey(category.id, updatedFunMenu.id)
+            val key = FavoriteKey(category.id, updatedFavoriteFunMenu.id)
             if (key in _favoriteFunMenus.value) {
                 _favoriteFunMenus.value -= key
             } else {
@@ -84,77 +74,5 @@ class ExploreViewmodel
             }
         }
     }
-
-//    fun toggleFavorite(funMenuId: Long) {
-//        viewModelScope.launch {
-//            val updatedCategoryData = _exploreUiState.value.categoryData.map { category ->
-//                category.copy(categoryList = category.categoryList.map { funMenu ->
-//                    if (funMenu.id == funMenuId) {
-//                        funMenu.copy(isFavorite = !funMenu.isFavorite)
-//                    } else {
-//                        funMenu
-//                    }
-//                })
-//            }
-//            _exploreUiState.update { it.copy(categoryData = updatedCategoryData) }
-//        }
-//    }
-//
-//    fun updateFunMenu(updatedFunMenu: FunMenu) {
-//        viewModelScope.launch {
-//            val categoryToUpdate = _exploreUiState.value.categoryData.find {
-//                it.categoryList.any { funMenu -> funMenu.id == updatedFunMenu.id }
-//            }
-//            if (categoryToUpdate != null) {
-//                // ... update the category and then update the _exploreUiState
-//                val updatedCategoryList = _exploreUiState.value.categoryData.map { category ->
-//                    if (category.categoryList.any { it.id == updatedFunMenu.id }) {
-//                        category.copy(
-//                            categoryList = category.categoryList.map {
-//                                if (it.id == updatedFunMenu.id) updatedFunMenu else it
-//                            }
-//                        )
-//                    } else {
-//                        category
-//                    }
-//                }
-//                _exploreUiState.value = _exploreUiState.value.copy(categoryData = updatedCategoryList)
-//            }
-//            saveFavoriteFunMenus()
-//        }
-//    }
-//
-//    private fun loadFavoriteFunMenus() {
-//        viewModelScope.launch {
-//            favoriteDataStoreManager.favoriteFunMenus.collect { favoriteIds ->
-//                updateFunMenusWithFavorites(favoriteIds)
-//            }
-//        }
-//    }
-//
-//    private suspend fun saveFavoriteFunMenus() {
-//        val favoriteIds = _exploreUiState.value.categoryData.flatMap { it.categoryList }
-//            .filter { it.isFavorite }
-//            .map { it.id }
-//            .toSet()
-//        favoriteDataStoreManager.saveFavoriteFunMenus(favoriteIds)
-//    }
-//
-//
-//    private fun updateFunMenusWithFavorites(favoriteIds: Set<Long>) {
-//        _exploreUiState.update { currentState ->
-//            currentState.copy(categoryData = currentState.categoryData.map { category ->
-//                category.copy(categoryList = category.categoryList.map { funMenu ->
-//                    if (funMenu.isFavorite != favoriteIds.contains(funMenu.id)) {
-//                        funMenu.copy(isFavorite = favoriteIds.contains(funMenu.id))
-//                    } else {
-//                        funMenu
-//                    }
-//                })
-//            })
-//        }
-//    }
-
 }
 
-data class FavoriteKey(val categoryId: Int, val funMenuId: Long)

@@ -1,8 +1,9 @@
-package com.example.explore.ui.screen
+package com.example.explore.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
@@ -22,7 +23,6 @@ fun ExpandedCategoryList(
     onCategoryClick: (Category) -> Unit,
     modifier: Modifier = Modifier
 ){
-
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -35,7 +35,9 @@ fun ExpandedCategoryList(
         }
         Column(modifier = modifier.weight(0.5f)) {
             RandomImageResource(
-                imageRes = imageRes
+                imageRes = imageRes,
+                modifier = modifier
+                    .fillMaxHeight()
             )
         }
     }
@@ -44,7 +46,6 @@ fun ExpandedCategoryList(
 @Composable
 fun ExpandedMenuScreen(
     category: Category,
-//    funMenu: List<FunMenu>,
     onMenuClick: (FunMenu) -> Unit,
     selectedCategory: Category?,
     selectedMenu: FunMenu?,

@@ -1,4 +1,4 @@
-package com.example.explore.ui.screen
+package com.example.explore.ui.screens
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
