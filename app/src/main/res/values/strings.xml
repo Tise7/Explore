@@ -326,6 +326,7 @@
     <string name="category">Category</string>
     <string name="add_favorite">Add as a favorite</string>
     <string name="remove_favorite">Remove from favorite</string>
+    <string name="no_favorites">No favorites yet!!</string>
 
 
 </resources>

@@ -15,24 +15,23 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.explore.R
-import com.example.explore.ui.screenOrientation.rememberDeviceTypeHelper
 import com.example.explore.ui.navigation.BottomAppBar
 import com.example.explore.ui.navigation.Category
 import com.example.explore.ui.navigation.ExpDetail
-import com.example.explore.ui.navigation.NomDetail
 import com.example.explore.ui.navigation.ExpandedCategory
 import com.example.explore.ui.navigation.ExpandedMenu
 import com.example.explore.ui.navigation.ExploreNavigation
 import com.example.explore.ui.navigation.Favorite
 import com.example.explore.ui.navigation.Menu
+import com.example.explore.ui.navigation.NomDetail
 import com.example.explore.ui.navigation.Rail
 import com.example.explore.ui.navigation.Screens
 import com.example.explore.ui.navigation.TopAppBar
 import com.example.explore.ui.navigation.Welcome
 import com.example.explore.ui.navigation.navigateSingleTopTo
+import com.example.explore.ui.screenOrientation.rememberDeviceTypeHelper
 import com.example.explore.ui.viewModel.AppViewModelProvider
 import com.example.explore.ui.viewModel.ExploreViewmodel
-
 
 @Composable
 fun ExploreScreen(
@@ -53,10 +52,9 @@ fun ExploreScreen(
     val currentScreen = Screens.find{ it.route == currentDestination?.route } ?: Welcome
     val canNavigateBack = navController.previousBackStackEntry != null && currentScreen != Category && currentScreen != Favorite && currentScreen != ExpandedCategory
 
-
     Scaffold(
         topBar = {
-            if ( currentScreen != Welcome) {
+            if (!isLandscape && currentScreen != Welcome) {
                 when (currentScreen) {
                     Category -> {
                         TopAppBar(
@@ -127,7 +125,8 @@ fun ExploreScreen(
                     modifier = modifier,
                 )
             }
-        }
+        },
+
     ) {innerPadding ->
         Row {
             if (isLandscape && currentScreen != Welcome) {
@@ -139,6 +138,8 @@ fun ExploreScreen(
                     onFavoritesClick = {
                         navController.navigateSingleTopTo(Favorite.route)
                     },
+                    onBackPressed = { navController.navigateUp() },
+                    canNavigateBack = canNavigateBack,
                     modifier = modifier
                         .padding(innerPadding)
                         .weight(.1f)
@@ -156,5 +157,3 @@ fun ExploreScreen(
         }
     }
 }
-
-

@@ -3,6 +3,7 @@ package com.example.explore.ui.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,6 +26,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
@@ -47,10 +49,17 @@ fun FavoriteScreen(
     val groupedFavorites = favoriteFunMenus.groupBy { it.categoryId }
 
     if (favoriteFunMenus.isEmpty()) {
-        Text(
-            text = "No favorites yet!",
-            modifier = modifier.padding(16.dp)
-        )
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = modifier
+        ){
+            Text(
+                text = stringResource(R.string.no_favorites),
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = modifier
+            )
+        }
     } else {
         LazyColumn(
             modifier = modifier
@@ -68,7 +77,13 @@ fun FavoriteScreen(
                     Text(
                         text = category?.titleResourceId?.let { stringResource(id = it) } ?: "",
                         style = MaterialTheme.typography.titleLarge,
-                        modifier = Modifier.padding(start = 8.dp)
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = modifier
+                            .padding(start = 10.dp, end = 10.dp)
+                            .clip(RoundedCornerShape(dimensionResource(R.dimen.card_corner_radius)))
+                            .background(color = MaterialTheme.colorScheme.surfaceVariant)
+                            .fillMaxWidth()
+                            .padding(start = 20.dp, top = 10.dp, bottom = 10.dp)
                     )
                     LazyRow(
                         modifier = modifier.fillMaxSize(),

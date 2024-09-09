@@ -155,11 +155,14 @@ fun BottomAppBar(
 }
 
 
+
 @Composable
 fun Rail(
     currentScreen: String,
     onHomeClick: () -> Unit,
     onFavoritesClick: () -> Unit,
+    onBackPressed: () -> Unit,
+    canNavigateBack: Boolean,
     modifier: Modifier = Modifier,
 ) {
     NavigationRail(
@@ -167,9 +170,22 @@ fun Rail(
     ) {
         Column(
             modifier = modifier,
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Column(
+                modifier = Modifier.weight(1f),
+            ){
+                if (canNavigateBack) {
+                    IconButton(onClick = { onBackPressed() }) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBackIos,
+                            contentDescription = "Back"
+                        )
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.weight(.4f))
             NavigationRailItem(
                 icon = {
                     Icon(
@@ -231,6 +247,8 @@ fun Rail(
                 selected = currentScreen == Favorite.route,
                 onClick = { onFavoritesClick()}
             )
+            Spacer(modifier = Modifier.weight(1f))
+
         }
     }
 }

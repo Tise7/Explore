@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
+
 class ExploreViewmodel
     (private val favoriteDataStoreManager: FavoriteDataStoreManager)
 : ViewModel() {
