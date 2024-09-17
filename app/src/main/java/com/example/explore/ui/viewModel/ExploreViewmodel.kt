@@ -3,10 +3,10 @@ package com.example.explore.ui.viewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.explore.data.AppImageResources
-import com.example.explore.data.Category
+import com.example.explore.model.Category
 import com.example.explore.data.FavoriteDataStoreManager
 import com.example.explore.data.FunListDataProvider
-import com.example.explore.data.FunMenu
+import com.example.explore.model.FunMenu
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

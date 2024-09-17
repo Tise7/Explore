@@ -30,7 +30,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.explore.R
-import com.example.explore.data.Category
+import com.example.explore.model.Category
 import com.example.explore.data.FunListDataProvider
 import com.example.explore.ui.reuseables.ImageResource
 import com.example.explore.ui.theme.FunEUTheme

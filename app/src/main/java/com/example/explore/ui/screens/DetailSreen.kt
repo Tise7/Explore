@@ -43,6 +43,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.explore.R
+import com.example.explore.model.FunMenu
 import com.example.explore.ui.theme.FunEUTheme
 
 @Composable
@@ -225,7 +226,7 @@ fun ExpandedDetailScreen(
 @Composable
 fun DetailScreenPreview() {
     FunEUTheme {
-        val funMenu = com.example.explore.data.FunMenu(
+        val funMenu = FunMenu(
             id = 1,
             titleResourceId = R.string.coffee_shops_2,
             descriptionResourceId = R.string.coffee_shops_2_description,

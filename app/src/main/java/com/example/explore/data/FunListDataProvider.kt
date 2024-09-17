@@ -1,6 +1,8 @@
 package com.example.explore.data
 
 import com.example.explore.R
+import com.example.explore.model.Category
+import com.example.explore.model.FunMenu
 
 
 object FunListDataProvider {

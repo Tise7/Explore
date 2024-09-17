@@ -105,7 +105,7 @@ fun ExploreNavigation(
         }
         composable(route = ExpandedCategory.route) {
             val onCategoryClickRemembered = remember {
-                { category: com.example.explore.data.Category ->
+                { category: com.example.explore.model.Category ->
                     exploreViewmodel.updateCurrentCategory(category)
                     exploreViewmodel.updateCurrentFunMenu(null)
                     navController.navigate(ExpandedMenu.route)

@@ -17,8 +17,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.explore.data.Category
-import com.example.explore.data.FunMenu
+import com.example.explore.model.Category
+import com.example.explore.model.FunMenu
 import com.example.explore.ui.reuseables.RandomImageResource
 import com.example.explore.ui.viewModel.FavoriteKey
 

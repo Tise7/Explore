@@ -35,13 +35,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.explore.R
+import com.example.explore.model.Category
+import com.example.explore.model.FunMenu
 import com.example.explore.ui.viewModel.ExploreViewmodel
 
 
 @Composable
 fun FavoriteScreen(
-    onItemClick: (funMenu: com.example.explore.data.FunMenu, category: com.example.explore.data.Category) -> Unit,
-    onFavoriteClick: (funMenu: com.example.explore.data.FunMenu, category: com.example.explore.data.Category) -> Unit,
+    onItemClick: (funMenu: FunMenu, category: Category) -> Unit,
+    onFavoriteClick: (funMenu: FunMenu, category: Category) -> Unit,
     viewModel: ExploreViewmodel,
     modifier: Modifier = Modifier,
 ) {

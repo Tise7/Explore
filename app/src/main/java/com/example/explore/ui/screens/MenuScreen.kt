@@ -28,8 +28,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.explore.R
-import com.example.explore.data.Category
-import com.example.explore.data.FunMenu
+import com.example.explore.model.Category
+import com.example.explore.model.FunMenu
 import com.example.explore.ui.reuseables.ImageResource
 import com.example.explore.ui.viewModel.FavoriteKey
 

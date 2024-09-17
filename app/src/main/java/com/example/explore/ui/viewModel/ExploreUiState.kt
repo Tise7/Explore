@@ -1,7 +1,7 @@
 package com.example.explore.ui.viewModel
 
-import com.example.explore.data.Category
-import com.example.explore.data.FunMenu
+import com.example.explore.model.Category
+import com.example.explore.model.FunMenu
 
 
 data class ExploreUiState(

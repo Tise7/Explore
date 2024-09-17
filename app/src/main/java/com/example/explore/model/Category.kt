@@ -1,4 +1,4 @@
-package com.example.explore.data
+package com.example.explore.model
 
 import android.os.Parcelable
 import androidx.annotation.DrawableRes
