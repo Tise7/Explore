@@ -17,7 +17,6 @@ import com.example.explore.ui.screens.ExpandedDetailScreen
 import com.example.explore.ui.screens.ExpandedMenuScreen
 import com.example.explore.ui.screens.FavoriteScreen
 import com.example.explore.ui.screens.FunMenuList
-import com.example.explore.ui.screens.NormalDetailScreen
 import com.example.explore.ui.screens.WelcomeScreen
 import com.example.explore.ui.viewModel.ExploreUiState
 import com.example.explore.ui.viewModel.ExploreViewmodel
