@@ -90,7 +90,7 @@ fun ExploreNavigation(
             }
         }
         composable(route = NomDetail.route) {
-            NormalDetailScreen(
+            ExpandedDetailScreen(
                 imageRes = exploreUiState.currentFunMenu?.imageResourceId ?: 0,
                 titleRes = exploreUiState.currentFunMenu?.titleResourceId ?: 0,
                 descriptionRes = exploreUiState.currentFunMenu?.descriptionResourceId ?: 0

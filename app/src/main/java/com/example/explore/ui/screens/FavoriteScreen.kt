@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -136,14 +137,16 @@ fun FavoriteMenuCard(
        ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-            modifier = modifier
+            verticalArrangement = Arrangement.Top,
+            modifier = modifier.size(300.dp)
         ) {
             Image(
                 painter = painterResource(imageRes),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = modifier
+                    .fillMaxWidth()
+                    .size(200.dp)
             )
             Text(
                 style = MaterialTheme.typography.bodyLarge,
@@ -161,7 +164,10 @@ fun FavoriteMenuCard(
                     imageVector = icon,
                     contentDescription = stringResource(iconContentDescription),
                     tint = MaterialTheme.colorScheme.primary,
-                    modifier = modifier.size(26.dp)
+                    modifier = modifier
+                        .fillMaxHeight()
+                        .size(26.dp)
+
                 )
             }
         }

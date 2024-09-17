@@ -104,8 +104,8 @@ fun FunMenuList (
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
         contentPadding = PaddingValues(
-            vertical = dimensionResource(R.dimen.padding_large),
-            horizontal = dimensionResource(R.dimen.padding_large)
+            vertical = dimensionResource(R.dimen.padding_medium),
+            horizontal = dimensionResource(R.dimen.padding_small)
         ),
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_large)),
     ) {

@@ -6,6 +6,7 @@ import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.rememberTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -123,17 +124,17 @@ fun ExpandedDetailScreen(
             if (targetState) {
                 spring(
                     dampingRatio = Spring.DampingRatioMediumBouncy,
-                    stiffness = Spring.StiffnessLow
+                    stiffness = Spring.StiffnessVeryLow
                 )
             } else {
                 spring(
-                    dampingRatio = Spring.DampingRatioMediumBouncy,
-                    stiffness = Spring.StiffnessMedium
+                    dampingRatio = Spring.DampingRatioHighBouncy, // Increased damping
+                    stiffness = Spring.StiffnessLow
                 )
             }
         },
         label = "cardHeight"
-    ) { if (it) 0.dp else 700.dp }
+    ) { if (it) 0.dp else 1200.dp }
 
     Box(modifier = modifier) {
         Column(modifier = modifier) {
@@ -180,6 +181,10 @@ fun ExpandedDetailScreen(
                                 contentColor = MaterialTheme.colorScheme.inverseSurface,
                             ),
                             modifier = modifier
+                                .clickable {
+                                    expanded = !expanded
+                                    transitionState.targetState = !expanded
+                                }
                                 .padding(top = 80.dp)
                                 .fillMaxHeight()
                         ) {
